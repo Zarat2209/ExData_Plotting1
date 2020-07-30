@@ -6,6 +6,7 @@ data<-unzip ("./dataset.zip", exdir = ".")
 file <- read.table(data,header=T, sep=";", stringsAsFactors = F)
 
 #subset data table to extract relevant data
+library(dplyr)
 
 rows1 <- filter(file, file$Date == "1/2/2007")
 rows2 <- filter(file, file$Date == "2/2/2007")
@@ -27,4 +28,3 @@ subsetdata$Global_active_power <- as.numeric(subsetdata$Global_active_power)
 png('plot1.png')
 hist(subsetdata$Global_active_power, col = "Red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
 dev.off()
-

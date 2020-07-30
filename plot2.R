@@ -27,6 +27,6 @@ subsetdata$Global_active_power <- as.numeric(subsetdata$Global_active_power)
 ## Create plot and save as PNG file
 
 png('plot1.png')
-hist(subsetdata$Global_active_power, col = "Red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+plot(subsetdata$Global_active_power ~ subsetdata$DateTime, type="l", xlab= "", ylab="Global Active Power (kilowatts)")
 dev.off()
 
