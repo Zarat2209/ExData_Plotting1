@@ -33,16 +33,26 @@ png('plot4.png')
 
 par(mfrow=c(2,2))
 
-hist(subsetdata$Global_active_power, col = "Red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+##Create Plot 1
 
 plot(subsetdata$Global_active_power ~ subsetdata$DateTime, type="l", xlab= "", ylab="Global Active Power (kilowatts)")
+
+##Create Plot 2
+
+plot(subsetdata$Voltage ~ subsetdata$DateTime, type = "l",ylab = "Voltage (volt)", xlab = "")
+
+##Create Plot 3
 
 plot(subsetdata$Sub_metering_1 ~ subsetdata$DateTime, type= "l", col = "Black", xlab = " ", ylab = "Energy sub metering")
 lines(subsetdata$Sub_metering_2 ~ subsetdata$DateTime, type= "l", col = "Red")
 lines(subsetdata$Sub_metering_3 ~ subsetdata$DateTime, type= "l", col = "Blue")
 legend("topright", c("Sub_metering_1" , "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5,2.5,2.5),col=c("Black","Red","Blue"))
 
+
+##Create Plot 4
+
 plot(subsetdata$Global_reactive_power ~ subsetdata$DateTime, type= "l", col = "Black", ylab = "Global_reactive_power", xlab = "date/time")
 
 dev.off()
+
 
